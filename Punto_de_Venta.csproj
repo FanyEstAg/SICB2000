@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Instrumentation" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +55,12 @@
     <Compile Include="MODULOS\Caja\md_AperturaCaja.Designer.cs">
       <DependentUpon>md_AperturaCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="MODULOS\Caja\md_CierreCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\Caja\md_CierreCaja.Designer.cs">
+      <DependentUpon>md_CierreCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="MODULOS\IniciarSesion\md_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,17 +73,29 @@
     <Compile Include="MODULOS\Usuarios_Permisos\md_UsuariosOK.Designer.cs">
       <DependentUpon>md_UsuariosOK.cs</DependentUpon>
     </Compile>
+    <Compile Include="MODULOS\VentasMenuPrincipal\md_Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULOS\VentasMenuPrincipal\md_Ventas.Designer.cs">
+      <DependentUpon>md_Ventas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tamanio_automatico_dgv.cs" />
     <EmbeddedResource Include="MODULOS\Caja\md_AperturaCaja.resx">
       <DependentUpon>md_AperturaCaja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\Caja\md_CierreCaja.resx">
+      <DependentUpon>md_CierreCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MODULOS\IniciarSesion\md_Login.resx">
       <DependentUpon>md_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MODULOS\Usuarios_Permisos\md_UsuariosOK.resx">
       <DependentUpon>md_UsuariosOK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODULOS\VentasMenuPrincipal\md_Ventas.resx">
+      <DependentUpon>md_Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -29,10 +29,13 @@ namespace Punto_de_Venta.MODULOS
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(md_Login));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnOlvContrasenia = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -51,35 +54,36 @@ namespace Punto_de_Venta.MODULOS
             this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.pbIconoLogin = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelRestaurarCuenta = new System.Windows.Forms.Panel();
             this.cbxCorreo = new System.Windows.Forms.ComboBox();
+            this.lblEstado_de_envio = new System.Windows.Forms.Label();
             this.Panel7 = new System.Windows.Forms.Panel();
             this.txtpassenvi = new System.Windows.Forms.Label();
-            this.lblEstado_de_envio = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.Panel12 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.Label5 = new System.Windows.Forms.Label();
             this.Label6 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.btnOlvContrasenia = new System.Windows.Forms.Button();
-            this.lblResultadoContraseña = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.PictureBox2 = new System.Windows.Forms.PictureBox();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconoLogin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.panelRestaurarCuenta.SuspendLayout();
             this.Panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -117,6 +121,30 @@ namespace Punto_de_Venta.MODULOS
             this.panel1.TabIndex = 2;
             this.panel1.UseWaitCursor = true;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.btnOlvContrasenia);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 292);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(801, 111);
+            this.panel6.TabIndex = 618;
+            this.panel6.UseWaitCursor = true;
+            // 
+            // btnOlvContrasenia
+            // 
+            this.btnOlvContrasenia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOlvContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOlvContrasenia.ForeColor = System.Drawing.Color.Gray;
+            this.btnOlvContrasenia.Location = new System.Drawing.Point(237, 29);
+            this.btnOlvContrasenia.Name = "btnOlvContrasenia";
+            this.btnOlvContrasenia.Size = new System.Drawing.Size(326, 52);
+            this.btnOlvContrasenia.TabIndex = 0;
+            this.btnOlvContrasenia.Text = "OLVIDE MI CONTRASEÑA";
+            this.btnOlvContrasenia.UseVisualStyleBackColor = true;
+            this.btnOlvContrasenia.UseWaitCursor = true;
+            this.btnOlvContrasenia.Click += new System.EventHandler(this.btnOlvContrasenia_Click);
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
@@ -143,6 +171,7 @@ namespace Punto_de_Venta.MODULOS
             this.panel4.Controls.Add(this.menuStrip1);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.txtContrasenia);
+            this.panel4.Controls.Add(this.PictureBox2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 75);
             this.panel4.Name = "panel4";
@@ -170,6 +199,9 @@ namespace Punto_de_Venta.MODULOS
             this.tsmOcultar.Image = ((System.Drawing.Image)(resources.GetObject("tsmOcultar.Image")));
             this.tsmOcultar.Name = "tsmOcultar";
             this.tsmOcultar.Size = new System.Drawing.Size(28, 18);
+            this.tsmOcultar.ToolTipText = "Ocultar contraseña";
+            this.tsmOcultar.Visible = false;
+            this.tsmOcultar.Click += new System.EventHandler(this.tsmOcultar_Click);
             // 
             // tsmVer
             // 
@@ -177,7 +209,8 @@ namespace Punto_de_Venta.MODULOS
             this.tsmVer.Name = "tsmVer";
             this.tsmVer.Size = new System.Drawing.Size(38, 18);
             this.tsmVer.Text = " ";
-            this.tsmVer.Visible = false;
+            this.tsmVer.ToolTipText = "Ver contraseña";
+            this.tsmVer.Click += new System.EventHandler(this.tsmVer_Click);
             // 
             // panel5
             // 
@@ -281,6 +314,7 @@ namespace Punto_de_Venta.MODULOS
             this.btnCambiarUsuario.Text = "Cambiar de Usuario";
             this.btnCambiarUsuario.UseVisualStyleBackColor = false;
             this.btnCambiarUsuario.UseWaitCursor = true;
+            this.btnCambiarUsuario.Click += new System.EventHandler(this.btnCambiarUsuario_Click);
             // 
             // btnRecuperacionContrasenia
             // 
@@ -313,6 +347,7 @@ namespace Punto_de_Venta.MODULOS
             this.btnIniciarSesion.Text = "Iniciar sesion";
             this.btnIniciarSesion.UseVisualStyleBackColor = false;
             this.btnIniciarSesion.UseWaitCursor = true;
+            this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
             // pbIconoLogin
             // 
@@ -338,45 +373,8 @@ namespace Punto_de_Venta.MODULOS
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.UseWaitCursor = true;
             // 
-            // dgvUsuarios
-            // 
-            this.dgvUsuarios.AllowUserToAddRows = false;
-            this.dgvUsuarios.AllowUserToResizeRows = false;
-            this.dgvUsuarios.BackgroundColor = System.Drawing.Color.White;
-            this.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Eliminar});
-            this.dgvUsuarios.EnableHeadersVisualStyles = false;
-            this.dgvUsuarios.Location = new System.Drawing.Point(12, 130);
-            this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.ReadOnly = true;
-            this.dgvUsuarios.RowHeadersVisible = false;
-            this.dgvUsuarios.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvUsuarios.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgvUsuarios.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Lavender;
-            this.dgvUsuarios.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.RoyalBlue;
-            this.dgvUsuarios.RowTemplate.Height = 30;
-            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(98, 66);
-            this.dgvUsuarios.TabIndex = 4;
-            this.dgvUsuarios.Visible = false;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Eliminar.HeaderText = "         ";
-            this.Eliminar.Image = ((System.Drawing.Image)(resources.GetObject("Eliminar.Image")));
-            this.Eliminar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Width = 38;
-            // 
             // panelRestaurarCuenta
             // 
-            this.panelRestaurarCuenta.Controls.Add(this.richTextBox1);
             this.panelRestaurarCuenta.Controls.Add(this.cbxCorreo);
             this.panelRestaurarCuenta.Controls.Add(this.lblEstado_de_envio);
             this.panelRestaurarCuenta.Controls.Add(this.Panel7);
@@ -390,6 +388,7 @@ namespace Punto_de_Venta.MODULOS
             this.panelRestaurarCuenta.Name = "panelRestaurarCuenta";
             this.panelRestaurarCuenta.Size = new System.Drawing.Size(589, 302);
             this.panelRestaurarCuenta.TabIndex = 618;
+            this.panelRestaurarCuenta.UseWaitCursor = true;
             this.panelRestaurarCuenta.Visible = false;
             // 
             // cbxCorreo
@@ -402,6 +401,20 @@ namespace Punto_de_Venta.MODULOS
             this.cbxCorreo.Name = "cbxCorreo";
             this.cbxCorreo.Size = new System.Drawing.Size(318, 26);
             this.cbxCorreo.TabIndex = 616;
+            this.cbxCorreo.UseWaitCursor = true;
+            // 
+            // lblEstado_de_envio
+            // 
+            this.lblEstado_de_envio.AutoSize = true;
+            this.lblEstado_de_envio.BackColor = System.Drawing.Color.Transparent;
+            this.lblEstado_de_envio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado_de_envio.ForeColor = System.Drawing.Color.White;
+            this.lblEstado_de_envio.Location = new System.Drawing.Point(374, 220);
+            this.lblEstado_de_envio.Name = "lblEstado_de_envio";
+            this.lblEstado_de_envio.Size = new System.Drawing.Size(142, 20);
+            this.lblEstado_de_envio.TabIndex = 602;
+            this.lblEstado_de_envio.Text = "Correo electronico:";
+            this.lblEstado_de_envio.UseWaitCursor = true;
             // 
             // Panel7
             // 
@@ -410,6 +423,7 @@ namespace Punto_de_Venta.MODULOS
             this.Panel7.Name = "Panel7";
             this.Panel7.Size = new System.Drawing.Size(178, 91);
             this.Panel7.TabIndex = 615;
+            this.Panel7.UseWaitCursor = true;
             this.Panel7.Visible = false;
             // 
             // txtpassenvi
@@ -423,23 +437,12 @@ namespace Punto_de_Venta.MODULOS
             this.txtpassenvi.Size = new System.Drawing.Size(142, 20);
             this.txtpassenvi.TabIndex = 602;
             this.txtpassenvi.Text = "Correo electronico:";
-            // 
-            // lblEstado_de_envio
-            // 
-            this.lblEstado_de_envio.AutoSize = true;
-            this.lblEstado_de_envio.BackColor = System.Drawing.Color.Transparent;
-            this.lblEstado_de_envio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado_de_envio.ForeColor = System.Drawing.Color.White;
-            this.lblEstado_de_envio.Location = new System.Drawing.Point(374, 220);
-            this.lblEstado_de_envio.Name = "lblEstado_de_envio";
-            this.lblEstado_de_envio.Size = new System.Drawing.Size(142, 20);
-            this.lblEstado_de_envio.TabIndex = 602;
-            this.lblEstado_de_envio.Text = "Correo electronico:";
+            this.txtpassenvi.UseWaitCursor = true;
             // 
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.btnCerrar.FlatAppearance.BorderSize = 0;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -451,12 +454,13 @@ namespace Punto_de_Venta.MODULOS
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.UseWaitCursor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnEnviar
             // 
             this.btnEnviar.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnEnviar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEnviar.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.btnEnviar.FlatAppearance.BorderSize = 0;
             this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnviar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -467,6 +471,7 @@ namespace Punto_de_Venta.MODULOS
             this.btnEnviar.TabIndex = 614;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = false;
+            this.btnEnviar.UseWaitCursor = true;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
             // Panel12
@@ -476,6 +481,7 @@ namespace Punto_de_Venta.MODULOS
             this.Panel12.Name = "Panel12";
             this.Panel12.Size = new System.Drawing.Size(318, 1);
             this.Panel12.TabIndex = 604;
+            this.Panel12.UseWaitCursor = true;
             // 
             // label4
             // 
@@ -489,6 +495,7 @@ namespace Punto_de_Venta.MODULOS
             this.label4.TabIndex = 602;
             this.label4.Text = "Restaurar Contraseña";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.UseWaitCursor = true;
             // 
             // Label5
             // 
@@ -501,6 +508,7 @@ namespace Punto_de_Venta.MODULOS
             this.Label5.Size = new System.Drawing.Size(179, 15);
             this.Label5.TabIndex = 602;
             this.Label5.Text = "Con el que registraste tu cuenta";
+            this.Label5.UseWaitCursor = true;
             // 
             // Label6
             // 
@@ -513,47 +521,54 @@ namespace Punto_de_Venta.MODULOS
             this.Label6.Size = new System.Drawing.Size(142, 20);
             this.Label6.TabIndex = 602;
             this.Label6.Text = "Correo electronico:";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.btnOlvContrasenia);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 292);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(801, 111);
-            this.panel6.TabIndex = 618;
-            // 
-            // btnOlvContrasenia
-            // 
-            this.btnOlvContrasenia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOlvContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOlvContrasenia.ForeColor = System.Drawing.Color.Gray;
-            this.btnOlvContrasenia.Location = new System.Drawing.Point(237, 29);
-            this.btnOlvContrasenia.Name = "btnOlvContrasenia";
-            this.btnOlvContrasenia.Size = new System.Drawing.Size(326, 52);
-            this.btnOlvContrasenia.TabIndex = 0;
-            this.btnOlvContrasenia.Text = "OLVIDE MI CONTRASEÑA";
-            this.btnOlvContrasenia.UseVisualStyleBackColor = true;
-            this.btnOlvContrasenia.Click += new System.EventHandler(this.btnOlvContrasenia_Click);
-            // 
-            // lblResultadoContraseña
-            // 
-            this.lblResultadoContraseña.AutoSize = true;
-            this.lblResultadoContraseña.ForeColor = System.Drawing.Color.White;
-            this.lblResultadoContraseña.Location = new System.Drawing.Point(12, 214);
-            this.lblResultadoContraseña.Name = "lblResultadoContraseña";
-            this.lblResultadoContraseña.Size = new System.Drawing.Size(35, 13);
-            this.lblResultadoContraseña.TabIndex = 619;
-            this.lblResultadoContraseña.Text = "label7";
+            this.Label6.UseWaitCursor = true;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(15, 138);
+            this.richTextBox1.Location = new System.Drawing.Point(16, 257);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(97, 75);
             this.richTextBox1.TabIndex = 617;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
-            this.richTextBox1.Visible = false;
+            this.richTextBox1.UseWaitCursor = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.progressBar1);
+            this.panel8.Controls.Add(this.richTextBox1);
+            this.panel8.Location = new System.Drawing.Point(1, 146);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(129, 348);
+            this.panel8.TabIndex = 624;
+            this.panel8.UseWaitCursor = true;
+            // 
+            // PictureBox2
+            // 
+            this.PictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox2.Image")));
+            this.PictureBox2.Location = new System.Drawing.Point(4, 3);
+            this.PictureBox2.Name = "PictureBox2";
+            this.PictureBox2.Size = new System.Drawing.Size(385, 417);
+            this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox2.TabIndex = 625;
+            this.PictureBox2.TabStop = false;
+            this.PictureBox2.Visible = false;
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 200;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(13, 31);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(100, 23);
+            this.progressBar1.TabIndex = 618;
             // 
             // md_Login
             // 
@@ -561,12 +576,11 @@ namespace Punto_de_Venta.MODULOS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(961, 506);
-            this.Controls.Add(this.lblResultadoContraseña);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panelRestaurarCuenta);
-            this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -577,6 +591,7 @@ namespace Punto_de_Venta.MODULOS
             this.Load += new System.EventHandler(this.md_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -586,14 +601,13 @@ namespace Punto_de_Venta.MODULOS
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconoLogin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.panelRestaurarCuenta.ResumeLayout(false);
             this.panelRestaurarCuenta.PerformLayout();
             this.Panel7.ResumeLayout(false);
             this.Panel7.PerformLayout();
-            this.panel6.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -620,8 +634,6 @@ namespace Punto_de_Venta.MODULOS
         private System.Windows.Forms.PictureBox pbIconoLogin;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dgvUsuarios;
-        private System.Windows.Forms.DataGridViewImageColumn Eliminar;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnOlvContrasenia;
         internal System.Windows.Forms.Panel panelRestaurarCuenta;
@@ -635,7 +647,11 @@ namespace Punto_de_Venta.MODULOS
         internal System.Windows.Forms.Label label4;
         internal System.Windows.Forms.Label Label5;
         internal System.Windows.Forms.Label Label6;
-        private System.Windows.Forms.Label lblResultadoContraseña;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel8;
+        internal System.Windows.Forms.PictureBox PictureBox2;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
